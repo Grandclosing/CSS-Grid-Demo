@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Grid Example</title>
+        <meta charset="utf-8">
+
+        <!-- Normally I'd put styles in a stylesheet, but for the purpose of this demonstration I'm keeping everything in one file -->
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 0;
+                margin: 0;
+
+                background-color: #fefefe;
+            }
+
+            pre {
+                display: inline-block;
+                background-color: #a5a5a5;
+                color: white;
+                font-weight: bold;
+                padding-right: 50px;
+                margin: 0px;
+            }
+
+            #header-container {
+                width: 100%;
+                padding: 15px 15px;
+                background-color: #31a9c4;
+                color: white;
+            }
+
+            #header-container h1 {
+                font-weight: bold;
+                margin: 0px;
+            }
+
+            .code-sample-container {
+                padding: 5px;
+                display: inline-block;
+            }
+
+            .code-sample-container h1 {
+                margin: 0px;
+                text-align: center;
+                color: #464646;
+            }
+
+            .example {
+                display: flex;
+                margin-bottom: 10px;
+            }
+           
+            .grid-container {
+                flex-grow: 1;
+                display: grid;
+                color: white;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            #grid-container1 {
+                flex-grow: 1;
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+
+            .grid-item {
+                font-size: 30px;
+                text-align: center;
+                padding: 20px;
+            }
+
+            #grid-container1 .grid-item {
+                background-color: #7131c4;
+            }
+
+            #grid-container2 {
+                grid-template-columns: auto auto;
+            }
+
+            #grid-container2 .grid-item {
+                background-color: #c183d6;
+            }
+
+            #grid-item-1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+
+            #grid-item-2 {
+                grid-row-start: 1;
+                grid-row-end: 3;
+                grid-column-start: 2;
+                grid-column-end: 2;
+            }
+
+            #grid-container3 .grid-item {
+                background-color: #83d6d3;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="header-container">
+                <h1>CSS Grid Example</h1>
+            </div>
+        </header>
+
+        <section class="example" id="example1">
+            <div class="code-sample-container" id="code1">
+                <h1>A Simple Grid</h1>
+                <pre>
+                    <code>
+    #grid-container1 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        color: white;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .grid-item {
+        background-color: #7131c4;
+        font-size: 30px;
+        text-align: center;
+        padding: 20px;
+    }
+                    </code>
+                </pre>
+            </div>
+            
+            <div class="grid-container" id="grid-container1">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">7</div>
+                <div class="grid-item">8</div>
+                <div class="grid-item">9</div>
+            </div>
+        </section>
+
+        <section class="example" id="example2">
+            <div class="code-sample-container" id="code2">
+                <h1>2 Columns With <br>Item 1 Spanning Both</h1>
+                <pre>
+                    <code>
+    #grid-container2 {
+        grid-template-columns: auto auto;
+    }
+
+    #grid-item-1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+                    </code>
+                </pre>
+            </div>
+            
+            <div class="grid-container" id="grid-container2">
+                <div class="grid-item" id="grid-item-1">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+            </div>
+        </section>
+
+        <section class="example" id="example3">
+            <div class="code-sample-container" id="code2">
+                <h1>3 Rows With <br>Item 2 Spanning Two</h1>
+                <pre>
+                    <code>
+    #grid-container2 {
+        grid-template-columns: auto auto;
+    }
+
+    #grid-item-2 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+                    </code>
+                </pre>
+            </div>
+            
+            <div class="grid-container" id="grid-container3">
+                <div class="grid-item">1</div>
+                <div class="grid-item" id="grid-item-2">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+            </div>
+        </section>
+    </body>
+</html>
